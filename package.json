@@ -1,0 +1,23 @@
+{
+  "name": "phunk-metadata-api",
+  "version": "1.0.0",
+  "description": "Metadata API for a db of tokens",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "seed": "node seeder.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^12.0.4",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
