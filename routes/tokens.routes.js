@@ -1,8 +1,8 @@
 import express from "express";
 const router = express.Router();
+import { getTokens, getToken } from "../controllers/token.controllers.js";
 
-router.get("/", (req, res) => {
-  res.status(200).json({ status: "ok", data: {} });
-});
+router.get("/", getTokens);
+router.get("/:tokenid", getToken);
 
 export default router;

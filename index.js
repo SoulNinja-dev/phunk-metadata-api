@@ -21,8 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV !== "production") app.use(morgan("dev"));
 
 // routes
-app.use("/tokens", tokensHandler);
-app.use("/attributes", attributeHandler);
+app.use("/api/tokens", tokensHandler);
+app.use("/api/attributes", attributeHandler);
 
 // running the server
 const PORT = process.env.PORT || 1717;
