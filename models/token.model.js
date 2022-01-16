@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const TokenSchema = new mongoose.Schema({
+  tokenid: {
+    type: Number,
+    unique: true,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -16,7 +21,6 @@ const TokenSchema = new mongoose.Schema({
       trait_type: {
         type: String,
         required: true,
-        enum: ["Eyes", "Ears", "Hair", "Sex"],
       },
       value: {
         type: String,
