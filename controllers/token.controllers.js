@@ -7,7 +7,14 @@ const getTokens = async (req, res, next) => {
 
 const getToken = async (req, res, next) => {
   const tokenid = req.params.tokenid;
-  const token = await TokenModel.find({ tokenid: tokenid }).catch((e) => {
+  let query = TokenModel.find({ tokenid: tokenid });
+
+  if (req.query.select) {
+    const fields = req.query.select.split(",").join(" ");
+    query = query.select(fields);
+  }
+
+  const token = await query.catch((e) => {
     console.log(e);
     res.status(500).json({ status: "error", error: e });
   });
