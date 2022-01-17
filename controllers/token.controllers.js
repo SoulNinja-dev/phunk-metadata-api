@@ -2,12 +2,7 @@
 import TokenModel from "../models/token.model.js";
 
 const getTokens = async (req, res, next) => {
-  // TODO: advanced results middleware for pagination and select
-  const tokens = await TokenModel.find({}).catch((e) => {
-    console.error(e);
-    res.status(500).json({ status: "error", error: e });
-  });
-  res.status(200).json({ status: "ok", data: tokens });
+  res.status(200).json({ status: "ok", data: res.advancedResults });
 };
 
 const getToken = async (req, res, next) => {
