@@ -3,6 +3,6 @@ import { attributes } from "../controllers/attributes.controllers.js";
 
 const router = express.Router();
 
-router.get("/", attributes);
+router.get("/:trait_type", attributes);
 
 export default router;
